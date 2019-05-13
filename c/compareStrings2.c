@@ -18,3 +18,6 @@ int main(void)
         printf("different\n");
     }
 }
+
+
+//strcmp can be used not one to check if strings are equal but it returns a negative or postive number if the compared letter is unequal which can be used to alphabetize
