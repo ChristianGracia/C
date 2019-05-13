@@ -7,13 +7,13 @@ bool compare_strings(char *a, char *b);
 int main(void)
 {
     char *i = get_string("i: ");
-    if (i == NULL)
+    if (!i)
     {
         return 1;
     }
 
     char *j = get_string("j: ");
-    if (j == NULL)
+    if (!j)
     {
         return 1;
     }
