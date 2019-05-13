@@ -20,10 +20,7 @@ int main(void)
     }
     //copy string into memory
 
-    for (int i = 0, n = strlen(s); i <= n; i++){
-        t[i] = s[i];
-    }
-
+    strcpy(t,s);
     //capitalize first letter in string
     if(strlen(t) > 0){
         t[0] = toupper(t[0]);
@@ -33,6 +30,10 @@ int main(void)
 
     printf("t: %s\n", t);
     printf("s: %s\n", s);
-}
 
-//copying a string without changing the original string while accessing the memory location by creating a new memory location with malloc()
+    //free up the memory that was created with malloc
+
+    free(t);
+
+    return 0;
+}
