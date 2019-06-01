@@ -1,8 +1,7 @@
-=#include <cs50.h>
+#include <cs50.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-//struct called node, containing an int identifier as 'value', reference to another node identified as  'next'
 
 typedef struct NODE
 {
@@ -14,15 +13,23 @@ typedef struct NODE
 void addNode(int value, NODE *homeNode)
 {
     NODE* trav = homeNode;
-    if (homeNode->next == NULL)
+    while(true)
+    {
+    if (trav->next == NULL)
     {
         NODE *newNode = malloc(sizeof(NODE));
         newNode->value = value;
         newNode->next = NULL;
-        homeNode->next = newNode;
+        trav->next = newNode;
+        break;
     }
-    else printf("ERROR: next node not null");
+    else
+    {
+        trav = trav->next;
+        printf("moved deeper \n");
 
+    }
+    }
 }
 
 int main(void)
@@ -37,4 +44,6 @@ int main(void)
     printf("%i\n", rootNode.next -> value);
 
     addNode(8, &rootNode);
+    addNode(17, &rootNode);
+    // printf("%i\n%i\n", rootNode.next->next->value, rootNode.next->next->next->value);
 }
