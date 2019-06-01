@@ -1,4 +1,4 @@
-#include <cs50.h>
+=#include <cs50.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -13,9 +13,16 @@ typedef struct NODE
 
 void addNode(int value, NODE *homeNode)
 {
-    NODE *newNode = malloc(sizeof(NODE));
-    newNode->value = value;
-    homeNode->next = newNode;
+    NODE* trav = homeNode;
+    if (homeNode->next == NULL)
+    {
+        NODE *newNode = malloc(sizeof(NODE));
+        newNode->value = value;
+        newNode->next = NULL;
+        homeNode->next = newNode;
+    }
+    else printf("ERROR: next node not null");
+
 }
 
 int main(void)
@@ -28,4 +35,6 @@ int main(void)
 
     printf("%i\n", rootNode.value);
     printf("%i\n", rootNode.next -> value);
+
+    addNode(8, &rootNode);
 }
