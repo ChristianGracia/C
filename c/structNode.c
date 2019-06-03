@@ -6,7 +6,6 @@ typedef struct NODE
 {
     int value;
     struct NODE *next;
-
 } NODE;
 
 void addNode(int value, NODE *homeNode)
@@ -26,7 +25,6 @@ void addNode(int value, NODE *homeNode)
     {
         trav = trav->next;
         printf("moved deeper \n");
-
     }
     }
 }
