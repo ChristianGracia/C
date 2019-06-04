@@ -31,7 +31,17 @@ void addNode(int value)
         trav = trav->next;
     }
 
+
     trav->next = newNode;
+}
+
+void removeNode(int value){
+    NODE *trav = rootNode;
+    if(rootNode -> value = value){
+        rootNode = rootNode -> next;
+        free(trav);
+        return;
+    }
 }
 
 void displayList(NODE* trav)
