@@ -10,12 +10,6 @@ typedef struct NODE
     struct NODE *next;
 } NODE;
 
-int add(int *x, int y)
-{
-    *x += 3;
-    return *x + y;
-}
-
 void addNode(int value, NODE *homeNode)
 {
     NODE *trav = homeNode;
