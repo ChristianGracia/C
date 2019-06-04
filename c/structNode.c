@@ -10,17 +10,27 @@ typedef struct NODE
     struct NODE *next;
 } NODE;
 
-void addNode(int value, NODE *homeNode)
+NODE *rootNode;
+
+void addNode(int value)
 {
-    NODE *trav = homeNode;
+    NODE *newNode = malloc(sizeof(NODE));
+    newNode->value = value;
+    newNode->next = NULL;
+
+    if (rootNode == NULL)
+    {
+        rootNode = newNode;
+        return;
+    }
+
+    NODE *trav = rootNode;
 
     while(trav->next != NULL)
     {
         trav = trav->next;
     }
-    NODE *newNode = malloc(sizeof(NODE));
-    newNode->value = value;
-    newNode->next = NULL;
+
     trav->next = newNode;
 }
 
@@ -44,11 +54,9 @@ void displayList(NODE* trav)
 
 int main(void)
 {
-    NODE rootNode;
-    rootNode.value = 5;
-    rootNode.next = NULL;
-    addNode(10, &rootNode);
-    addNode(8, &rootNode);
-    addNode(17, &rootNode);
-    displayList(&rootNode);
+    addNode(5);
+    addNode(10);
+    addNode(8);
+    addNode(17);
+    displayList(rootNode);
 }
