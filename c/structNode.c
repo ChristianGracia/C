@@ -44,10 +44,8 @@ void displayList(NODE* trav)
         else
         {
             printf(", ");
-
         }
     }
-
 }
 
 int main(void)
