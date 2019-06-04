@@ -37,11 +37,17 @@ void addNode(int value)
 
 void removeNode(int value){
     NODE *trav = rootNode;
-    if(rootNode -> value = value){
+    if(rootNode -> value == value){
         rootNode = rootNode -> next;
         free(trav);
         return;
     }
+    while(trav->next->value != value){
+        trav = trav->next;
+    }
+    NODE *temp = trav->next;
+    trav->next = temp->next;
+    free(temp);
 }
 
 void displayList(NODE* trav)
@@ -53,7 +59,7 @@ void displayList(NODE* trav)
 
         if(trav == NULL)
         {
-            printf("");
+            printf("\n");
         }
         else
         {
@@ -68,5 +74,7 @@ int main(void)
     addNode(10);
     addNode(8);
     addNode(17);
+    displayList(rootNode);
+    removeNode(8);
     displayList(rootNode);
 }
