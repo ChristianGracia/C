@@ -48,10 +48,14 @@ void addNode(int value)
             if (trav->high == NULL)
             {
                 trav->high = newNode;
-                continue;
+                return;
             }
+            trav = trav->high;
+            continue;
         }
     }
+
+
 }
 
 int main(void)
@@ -68,4 +72,5 @@ int main(void)
     addNode(4);
     addNode(13);
     addNode(7);
+
 }
