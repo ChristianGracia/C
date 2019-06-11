@@ -84,10 +84,24 @@ void displayOnDeparture(NODE *curNode)
     printf("%i, ", curNode->value);
 }
 
-
-//4 7 6 5 9 8 13 18 20 17 15 10
-
-//int doescontain(int value){} return 0 if false 1 if true
+int doesContain(int value)
+{
+    NODE *trav = rootNode;
+    while(trav->low && trav->high != NULL)
+    {
+       if (trav->low->value == value)
+       {
+           return 1;
+           printf("yes");
+       }
+       else if (trav->high->value == value)
+       {
+           return 1;
+           printf("yes");
+       }
+    }
+    return 0;
+}
 
 int main(void)
 {
@@ -105,7 +119,8 @@ int main(void)
     addNode(7);
 
     // displayTreeOnEnter(rootNode);
-    displayOnDeparture(rootNode);
+    // displayOnDeparture(rootNode);
     printf("\n");
+    doesContain(8);
 
 }
