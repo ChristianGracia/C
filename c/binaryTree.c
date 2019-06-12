@@ -86,21 +86,14 @@ void displayOnDeparture(NODE *curNode)
 
 int doesContain(int value)
 {
-    NODE *trav = rootNode;
-    while(trav->low && trav->high != NULL)
-    {
-       if (trav->low->value == value)
-       {
-           return 1;
-           printf("yes");
-       }
-       else if (trav->high->value == value)
-       {
-           return 1;
-           printf("yes");
-       }
+    int value;
+    if (displayTreeOnEnter() == value){
+        1;
     }
-    return 0;
+    else 
+    {
+        0;
+    }
 }
 
 int main(void)
