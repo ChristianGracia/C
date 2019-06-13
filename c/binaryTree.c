@@ -9,6 +9,7 @@ typedef struct NODE
     int value;
     struct NODE *low;
     struct NODE *high;
+
 } NODE;
 
 NODE *rootNode;
@@ -86,20 +87,18 @@ void displayOnDeparture(NODE *curNode)
 
 void doesContain(int value, NODE *curNode)
 {
-
-    if (curNode->value == value || curNode->low->value == value || curNode->high->value == value)
+    if (curNode->value == value)
     {
         printf("true");
     }
-    else
+    if (curNode->low != NULL)
     {
-        doesContain(value, curNode);
+        doesContain(value, curNode->low);
     }
-    if (curNode->low || curNode-> high == NULL)
+    if (curNode->high != NULL)
     {
-        printf("false");
+        doesContain(value, curNode->high);
     }
-
 
 }
 
@@ -121,7 +120,7 @@ int main(void)
     // displayTreeOnEnter(rootNode);
     // displayOnDeparture(rootNode);
     printf("\n");
-    doesContain(3, rootNode);
 
+    doesContain(13, rootNode);
 
 }
