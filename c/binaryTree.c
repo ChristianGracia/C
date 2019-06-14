@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
 #define true 1;
 #define false 0;
@@ -85,21 +86,32 @@ void displayOnDeparture(NODE *curNode)
     printf("%i, ", curNode->value);
 }
 
-void doesContain(int value, NODE *curNode)
+int doesContain(int value)
 {
-    if (curNode->value == value)
+    if (rootNode->value == value)
     {
-        printf("true");
-    }
-    if (curNode->low != NULL)
-    {
-        doesContain(value, curNode->low);
-    }
-    if (curNode->high != NULL)
-    {
-        doesContain(value, curNode->high);
+        return 1;
     }
 
+    NODE *trav = rootNode;
+    while(1)
+    {
+        if (trav->value == value)
+        {
+            return 1;
+        }
+
+        if (value < trav -> value)
+        {
+            if (trav->low == NULL)
+            {
+                return 0;
+            }
+            trav =trav->low;
+            continue;
+        }
+        return 0;
+    }
 }
 
 int main(void)
@@ -121,6 +133,6 @@ int main(void)
     // displayOnDeparture(rootNode);
     printf("\n");
 
-    doesContain(13, rootNode);
+    assert(doesContain(10) && "does contain 10");
 
 }
