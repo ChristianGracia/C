@@ -56,8 +56,6 @@ void addNode(int value)
             continue;
         }
     }
-
-
 }
 void displayTreeOnEnter(NODE *curNode)
 {
@@ -129,8 +127,8 @@ int main(void)
     addNode(13);
     addNode(7);
 
-    // displayTreeOnEnter(rootNode);
-    // displayOnDeparture(rootNode);
+    displayTreeOnEnter(rootNode);
+    displayOnDeparture(rootNode);
     printf("\n");
 
     assert(doesContain(10) && "does contain 10");
