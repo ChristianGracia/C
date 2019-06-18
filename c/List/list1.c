@@ -1,6 +1,9 @@
 #include <cs50.h>
 #include <stdio.h>
 
+//size = amount of items in something currently
+//capacity = amount of items that could possible fit
+
 int main(void)
 {
     int capacity = get_int("Capacity: ");
