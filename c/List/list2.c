@@ -32,4 +32,6 @@ int main(void)
         {
             printf("You inputted %i\n", numbers[i]);
         }
+        
+        free(numbers);
 }
