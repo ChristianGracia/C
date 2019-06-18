@@ -6,8 +6,8 @@
 
 int main(void)
 {
+    
  //allocating space for students
-
  int enrollment = get_int("Enrollment: ");
 
  student students[enrollment];
@@ -29,6 +29,5 @@ int main(void)
         fprintf(file, "%s,%s\n", students[i].name, students[i].dorm);
      }
      fclose(file);
-
  }
 }
