@@ -6,7 +6,15 @@
 
 int main(void)
 {
-    int capacity = get_int("Capacity: ");
+    int capacity;
+    do
+    {
+        capacity = get_int("Capacity: ");
+    }
+    while (capacity < 1);
+
+
+
     int numbers[capacity];
 
     int size = 0;
