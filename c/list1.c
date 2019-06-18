@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    int capacity = 2;
+    int capacity = get_int("Capacity: ");
     int numbers[capacity];
 
     int size = 0;
