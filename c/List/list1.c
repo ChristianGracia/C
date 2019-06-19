@@ -13,8 +13,6 @@ int main(void)
     }
     while (capacity < 1);
 
-
-
     int numbers[capacity];
 
     int size = 0;
