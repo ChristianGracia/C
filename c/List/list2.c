@@ -7,7 +7,6 @@ int main(void)
 {
     int *numbers = NULL;
     int capacity = 0;
-
     int size = 0;
 
     while(true)
@@ -32,6 +31,5 @@ int main(void)
         {
             printf("You inputted %i\n", numbers[i]);
         }
-        
         free(numbers);
 }
