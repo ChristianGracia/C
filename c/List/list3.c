@@ -1,6 +1,15 @@
 #include <cs50.h>
 #include <stdio.h>
 
+
+typedef struct node
+{
+    int number;
+    struct node *next;
+}node;
+
+
+
 int main(void)
 {
     //memory for numbers
