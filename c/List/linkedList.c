@@ -4,6 +4,8 @@
 #define true 1
 #define false 0
 
+//using a 1 by 1 linked list for data
+
 typedef struct NODE
 {
     int value;
@@ -30,7 +32,6 @@ void addNode(int value)
     {
         trav = trav->next;
     }
-
 
     trav->next = newNode;
 }
