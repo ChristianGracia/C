@@ -22,6 +22,7 @@ int main(void)
         if (size == capacity)
         {
             numbers = realloc(numbers, sizeof(int) * (size + 1));
+            capacity++;
         }
         numbers[size] = number;
         size++;
