@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 //reallocating memory with realloc and pointers
+//using arrays
 
 int main(void)
 {
