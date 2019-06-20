@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 //reallocating memory with realloc and pointers
-//using arrays
 
 int main(void)
 {
     int *numbers = NULL;
     int capacity = 0;
+
     int size = 0;
 
     while(true)
@@ -23,7 +23,6 @@ int main(void)
         if (size == capacity)
         {
             numbers = realloc(numbers, sizeof(int) * (size + 1));
-            capacity++;
         }
         numbers[size] = number;
         size++;
@@ -33,5 +32,6 @@ int main(void)
         {
             printf("You inputted %i\n", numbers[i]);
         }
+        
         free(numbers);
 }
