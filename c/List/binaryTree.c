@@ -112,6 +112,19 @@ int doesContain(int value)
     }
 }
 
+void freeMem(NODE *curNode)
+{
+    if (curNode->low)
+    {
+        freeMem(curNode->low);
+    }
+    if (curNode->high)
+    {
+        freeMem(curNode->high);
+    }
+    free(curNode);
+}
+
 int main(void)
 {
     addNode(10);
@@ -132,5 +145,5 @@ int main(void)
     printf("\n");
 
     assert(doesContain(10) && "does contain 10");
-
+    freeMem(rootNode);
 }
