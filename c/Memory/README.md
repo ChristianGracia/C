@@ -1,0 +1,1 @@
+This folder contains programs in C that deal with memory allocation and pointers

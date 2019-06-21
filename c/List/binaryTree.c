@@ -145,5 +145,6 @@ int main(void)
     printf("\n");
 
     assert(doesContain(10) && "does contain 10");
+    
     freeMem(rootNode);
 }

@@ -1,0 +1,1 @@
+simple program in C using a struct to store student data

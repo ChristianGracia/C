@@ -1,0 +1,1 @@
+This folder contains programs in C that uses data structures such as linked lists, binary trees, hash tables, and tries to store data
