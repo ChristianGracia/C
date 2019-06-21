@@ -8,12 +8,9 @@ typedef struct node
     struct node *next;
 }node;
 
-
-
 int main(void)
 {
     //memory for numbers
-
     node *numbers = NULL;
 
     //prompt for numbers (until EOF)
@@ -29,7 +26,6 @@ int main(void)
         }
 
         //allocate space for number
-
         node *n = malloc(sizeof(node));
 
         if (!n)
@@ -38,9 +34,23 @@ int main(void)
         }
 
         //add number to list
-
         n->number = number;
         n->next = NULL;
+        
+        if (numbers)
+        {
+            for (node *ptr = numbers; ptr != NULL; ptr = ptr->next)
+            {
+                if (!ptr->next)
+                {
+                    ptr->next = n;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            numbers = n;
+        }
     }
-
 }
