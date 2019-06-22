@@ -18,7 +18,6 @@ int main(void)
     students[i].name = get_string("Name: ");
     students[i].dorm = get_string("Dorm: ");
  }
-
  //save students to disk
  FILE *file = fopen("students.csv", "w");
 
