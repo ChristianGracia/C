@@ -28,5 +28,5 @@ int main(void)
         fprintf(file, "%s,%s\n", students[i].name, students[i].dorm);
      }
      fclose(file);
- }
+ };
 }
