@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <assert.h>
 
 #define true 1;
 #define false 0;
@@ -144,7 +143,6 @@ int main(void)
     displayOnDeparture(rootNode);
     printf("\n");
 
-    assert(doesContain(10) && "does contain 10");
     
     freeMem(rootNode);
 }
