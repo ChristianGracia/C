@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <assert.h>
 
-//minichallenge create the NODE for a binary tree.
 typedef struct NODE
 {
     int value;
@@ -11,6 +10,14 @@ typedef struct NODE
 } NODE;
 
 NODE *rootNode;
+
+typedef struct QNODE
+{
+    NODE *node;
+    struct QNODE *next;
+} QNODE;
+
+QNODE *headNode;
 
 void addNode(int value)
 {
