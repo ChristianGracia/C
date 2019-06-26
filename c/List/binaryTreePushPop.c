@@ -21,6 +21,7 @@ QNODE *headNode;
 
 //function declaration
 NODE* pop();
+void push();
 
 void addNode(int value)
 {
@@ -183,6 +184,10 @@ int main(void)
     displayTreeOnEnter(rootNode);
     printf("\n");
 
+    push(rootNode);
+    push(rootNode->low);
+    push(rootNode->high);
+
     freeTree(rootNode);
 
     // tests();
@@ -195,7 +200,7 @@ void push(NODE* address)
     QNODE *newQNode = malloc(sizeof(QNODE));
     newQNode->node = address;
     newQNode->next = NULL;
-    
+
     if (headNode == NULL)
     {
         headNode = newQNode;
@@ -206,6 +211,6 @@ void push(NODE* address)
     {
         trav = trav->next;
     }
-    
+
     trav->next = newQNode;
 }
