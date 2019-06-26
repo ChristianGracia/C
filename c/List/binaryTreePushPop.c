@@ -193,9 +193,6 @@ int main(void)
 
     freeTree(rootNode);
 
-    // tests();
-    // printf("%i\t%i\n", rootNode->low->value, rootNode->high->value);
-
 }
 
 void push(NODE* address)
@@ -225,6 +222,8 @@ NODE* pop()
     //return address of a headNode
 
     QNODE *temp = headNode;
+    QNODE *qTemp = headNode;
     headNode = temp->next;
+    free(qTemp);
     return temp->node;
 }
