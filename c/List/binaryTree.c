@@ -9,7 +9,6 @@ typedef struct NODE
     int value;
     struct NODE *low;
     struct NODE *high;
-
 } NODE;
 
 NODE *rootNode;

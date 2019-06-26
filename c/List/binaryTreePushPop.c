@@ -193,7 +193,7 @@ int main(void)
 void push(NODE* address)
 {
     QNODE *newQNode = malloc(sizeof(QNODE));
-    newQNode->node = adress;
+    newQNode->node = address;
     newQNode->next = NULL;
     
     if (headNode == NULL)
@@ -201,4 +201,11 @@ void push(NODE* address)
         headNode = newQNode;
         return;
     }
+    QNODE *trav = headNode;
+    while(trav->next != NULL)
+    {
+        trav = trav->next;
+    }
+    
+    trav->next = newQNode;
 }
