@@ -214,3 +214,16 @@ void push(NODE* address)
 
     trav->next = newQNode;
 }
+
+NODE* pop()
+{
+    //temp store the headNode
+    //reassign the headNode
+    //return address of a headNode
+    
+    QNODE *temp = headNode;
+    headNode = temp->next;
+    return temp->node;
+    
+   
+}
