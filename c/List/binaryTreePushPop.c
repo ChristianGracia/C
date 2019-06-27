@@ -22,6 +22,7 @@ QNODE *headNode;
 //function declaration
 NODE* pop();
 void push();
+void display();
 
 void addNode(int value)
 {
@@ -184,12 +185,14 @@ int main(void)
     displayTreeOnEnter(rootNode);
     printf("\n");
 
-    push(rootNode);
-    push(rootNode->low);
-    push(rootNode->high);
+    // push(rootNode);
+    // push(rootNode->low);
+    // push(rootNode->high);
 
-    printf("%i\n", pop()->value);
-    printf("%i\n", pop()->value);
+    // printf("%i\n", pop()->value);
+    // printf("%i\n", pop()->value);
+
+    display(rootNode);
 
     freeTree(rootNode);
 
@@ -228,13 +231,27 @@ NODE* pop()
     return temp->node;
 }
 
-void display(NODE*)
+void display(NODE* address)
 {
-    QNODE *newQnode = rootNode;
-    if (*newQNode == NULL)
+    address = rootNode;
+    printf("%i ", rootNode->value);
+    while(address->low != NULL && address->high != NULL)
     {
+        if (address->low != NULL)
+        {
+            push(address->low);
+            printf("%i ", address->low->value);
+            display(address->next->low);
 
+        }
+        if (address->high != NULL)
+        {
+            push(address->high);
+            printf("%i ", address->high->value);
+            display(address->high);
+        }
     }
+
 }
 
 
