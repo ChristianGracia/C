@@ -227,3 +227,23 @@ NODE* pop()
     free(qTemp);
     return temp->node;
 }
+
+void display(NODE*)
+{
+    QNODE *newQnode = rootNode;
+    if (*newNode* == NULL)
+    {
+
+    }
+}
+
+
+
+//display level
+//start at rootnode, add children nodes to queue, then print current node, low then high
+//start at root
+//add an children to queue,
+//print value
+//get next item in queue, go back to line 236 loop
+
+//mvp print one line in correct order
