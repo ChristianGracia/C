@@ -132,7 +132,8 @@ int doesContain(int value)
     }
 }
 
-void freeTree(NODE *curNode) {
+void freeTree(NODE *curNode)
+{
     if (curNode->low)
     {
         freeTree(curNode->low);
@@ -182,7 +183,7 @@ int main(void)
     printf("hello\n");
     populateTree();
 
-    displayTreeOnEnter(rootNode);
+    // displayTreeOnEnter(rootNode);
     printf("\n");
 
     // push(rootNode);
@@ -192,7 +193,7 @@ int main(void)
     // printf("%i\n", pop()->value);
     // printf("%i\n", pop()->value);
 
-    display(rootNode);
+    display();
 
     freeTree(rootNode);
 
@@ -224,34 +225,29 @@ NODE* pop()
     //reassign the headNode
     //return address of a headNode
 
-    QNODE *temp = headNode;
+    NODE *temp = headNode->node;
     QNODE *qTemp = headNode;
-    headNode = temp->next;
+    headNode = qTemp->next;
     free(qTemp);
-    return temp->node;
+    return temp;
 }
 
-void display(NODE* address)
+void display()
 {
-    address = rootNode;
     printf("%i ", rootNode->value);
-    while(address->low != NULL && address->high != NULL)
+    while(rootNode != NULL)
     {
-        if (address->low != NULL)
-        {
-            push(address->low);
-            printf("%i ", address->low->value);
-            display(address->next->low);
 
-        }
-        if (address->high != NULL)
+        if (rootNode->low != NULL)
         {
-            push(address->high);
-            printf("%i ", address->high->value);
-            display(address->high);
+           push(rootNode->low);
         }
+        if (rootNode->high != NULL)
+        {
+            push(rootNode->high);
+        }
+        printf("%i", pop()->value);
     }
-
 }
 
 
