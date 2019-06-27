@@ -231,7 +231,7 @@ NODE* pop()
 void display(NODE*)
 {
     QNODE *newQnode = rootNode;
-    if (*newNode* == NULL)
+    if (*newQNode == NULL)
     {
 
     }
