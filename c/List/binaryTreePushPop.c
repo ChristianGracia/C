@@ -19,7 +19,6 @@ typedef struct QNODE
 
 QNODE *headNode;
 
-//function declaration
 NODE* pop();
 void push();
 void display();
@@ -183,15 +182,10 @@ int main(void)
     printf("hello\n");
     populateTree();
 
-    // displayTreeOnEnter(rootNode);
+
     printf("\n");
 
-    // push(rootNode);
-    // push(rootNode->low);
-    // push(rootNode->high);
 
-    // printf("%i\n", pop()->value);
-    // printf("%i\n", pop()->value);
 
     display();
 
@@ -250,13 +244,3 @@ void display()
     }
 }
 
-
-
-//display level
-//start at rootnode, add children nodes to queue, then print current node, low then high
-//start at root
-//add an children to queue,
-//print value
-//get next item in queue, go back to line 236 loop
-
-//mvp print one line in correct order
