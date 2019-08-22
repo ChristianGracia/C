@@ -1,1 +1,1 @@
-repo for C C# programs
+repo for programs written in C
